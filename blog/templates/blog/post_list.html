@@ -1,3 +1,5 @@
+
+
 <html>
     <head>
         <title>Blog de Enrique</title>
@@ -7,16 +9,13 @@
             <h1><a href="/">Blog de Enrique</a></h1>
         </div>
         
-        <div>
-            <p>Publicado: 14.06.2014</p>
-            <h2><a href="">Mi primer post</a></h2>
-            <p>Texto al azar</p>
-        </div>
+        {% for post in posts %}
         
-        <div>
-            <p>Publicado: 14.06.2014</p>
-            <h2><a href="">Segundo post</a></h2>
-            <p>Texto al azar</p>
-        </div>
+            <div>
+                <p> publicado: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
